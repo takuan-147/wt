@@ -71,7 +71,7 @@ const WINDOW_INFO = [
            8776,
    ...loop([133,  267,  133,  133,  400,  133,  267,  133,  533], 16),
            2302,
-   ...loop([133,  267,  133,  133,  400,  133,  267,  133,  533], 40),
+   ...loop([133,  267,  133,  133,  400,  133,  267,  133,  533], 32),
               5
         ],
         sequence: [
@@ -80,7 +80,7 @@ const WINDOW_INFO = [
               0,
      ...loop([4,    3,    0,    1,    2,    4,    3,    0,    1], 16),
               0,
-     ...loop([4,    3,    0,    1,    2,    4,    3,    0,    1], 40),
+     ...loop([4,    3,    0,    1,    2,    4,    3,    0,    1], 32),
               4
         ],
         frame: 0,
@@ -98,7 +98,7 @@ const WINDOW_INFO = [
             133,  133,  267,  267,  267,  133,  267,  267,  133,  267], 16),
             19586,
    ...loop([133,  133,  267,  267,  267,  133,  267,  267,  400,
-            133,  133,  267,  267,  267,  133,  267,  267,  133,  267], 16),
+            133,  133,  267,  267,  267,  133,  267,  267,  133,  267], 12),
               5
         ],
         sequence: [
@@ -107,7 +107,7 @@ const WINDOW_INFO = [
               1,    0,    1,    0,    3,    1,    0,    1,    4,    2], 16),
               0,
      ...loop([1,    0,    1,    0,    3,    1,    0,    1,    4,
-              1,    0,    1,    0,    3,    1,    0,    1,    4,    2], 16),
+              1,    0,    1,    0,    3,    1,    0,    1,    4,    2], 12),
               4
         ],
         frame: 0,
@@ -123,7 +123,7 @@ const WINDOW_INFO = [
             500,
    ...loop([400,  400, 1333,  400,  400, 1367], 14),
             400,  400, 1333,  400,  400,
-            20554,            
+            10554,            
    ...loop([400,  400, 1333,  400,  400, 1367], 14),
               5
         ],
@@ -149,7 +149,7 @@ const WINDOW_INFO = [
    ...loop([133, 1733,  267,  133, 2033,  133, 1200,  267,  267,  267,  133, 2000], 6),
             133, 1733,  267,  133, 2033,  133, 1200,  267,  267,  267,
           19320,
-   ...loop([133, 1733,  267,  133, 2033,  133, 1200,  267,  267,  267,  133, 2000], 8),
+   ...loop([133, 1733,  267,  133, 2033,  133, 1200,  267,  267,  267,  133, 2000], 6),
               5
         ],
         sequence: [
@@ -157,7 +157,7 @@ const WINDOW_INFO = [
      ...loop([0,    4,    2,    1,    3,    0,    4,    2,    1,    3,    0,    4], 6),
               0,    4,    2,    1,    3,    0,    4,    2,    1,    3,
               0,
-     ...loop([0,    4,    2,    1,    3,    0,    4,    2,    1,    3,    0,    4], 8),
+     ...loop([0,    4,    2,    1,    3,    0,    4,    2,    1,    3,    0,    4], 6),
               4
         ],
         frame: 0,
@@ -173,14 +173,14 @@ const WINDOW_INFO = [
             500,
    ...loop([267,  433,  267,  133,  133,  133,  267,  400,  267,  133,  267,  267,  133,  133,  133,  267,  133,  500], 13),
           19620,
-   ...loop([267,  433,  267,  133,  133,  133,  267,  400,  267,  133,  267,  267,  133,  133,  133,  267,  133,  500], 13),
+   ...loop([267,  433,  267,  133,  133,  133,  267,  400,  267,  133,  267,  267,  133,  133,  133,  267,  133,  500], 12),
               5
         ],
         sequence: [
               0,
      ...loop([1,    4,    2,    0,    3,    1,    2,    4,    0,    3,    1,    2,    4,    0,    1,    3,    2,    4], 13),
               0,
-     ...loop([1,    4,    2,    0,    3,    1,    2,    4,    0,    3,    1,    2,    4,    0,    1,    3,    2,    4], 13),
+     ...loop([1,    4,    2,    0,    3,    1,    2,    4,    0,    3,    1,    2,    4,    0,    1,    3,    2,    4], 12),
               4
         ],
         frame: 0,
@@ -231,14 +231,14 @@ const WINDOW_INFO = [
             500, 
    ...loop([267,  400,  400,  267,  400,  400,  267,  400,  133,  133,  267,  267,  267,  400], 11),
           19520, 
-   ...loop([267,  400,  400,  267,  400,  400,  267,  400,  133,  133,  267,  267,  267,  400], 11),
+   ...loop([267,  400,  400,  267,  400,  400,  267,  400,  133,  133,  267,  267,  267,  400], 12),
               5
         ],
         sequence: [
               0,
      ...loop([4,    3,    2,    1,    0,    4,    3,    2,    1,    2,    0,    3,    2,    1], 11),
               0,
-     ...loop([4,    3,    2,    1,    0,    4,    3,    2,    1,    2,    0,    3,    2,    1], 11),
+     ...loop([4,    3,    2,    1,    0,    4,    3,    2,    1,    2,    0,    3,    2,    1], 12),
               4
         ],
         frame: 0,
@@ -351,12 +351,12 @@ const WINDOW_INFO = [
 
         timings:  [ 
             500,
-  ...loop([2236, 2102, 3270,  934, 2236, 2102, 3270, 1000], 10),
+  ...loop([2236, 2102, 3270,  934, 2236, 2102, 3270, 1000], 4),
             100
         ],
         sequence: [
               0,
-  ...loop([   1,    2,    3,    4,    0,    1,    2,    3], 10),              
+  ...loop([   1,    2,    3,    4,    0,    1,    2,    3], 4),
               0
         ],
         frame: 0,
@@ -404,9 +404,10 @@ const WINDOW_INFO = [
 ];
 
 let windowDelays = [8867, 8433, 5233, 3200, 4566, 4000, 4567, 10433, 1568, 17651, 19286, 51018];
-let mainStart = -1;
-let mainTime = 0;
 const offsX = 19, offsY = 33;
+
+let currentRun = null;
+let nextRunId = 0;
 
 function loop(arr, times) {
     let r = [];
@@ -414,54 +415,213 @@ function loop(arr, times) {
     return r;
 }
 
-function init() {
-    mainStart = new Date().getTime();
-    openWindow(0);
+function validateTimeline() {
+    if (windowDelays.length !== WINDOW_INFO.length - 1) {
+        throw new Error('windowDelays must contain one fewer item than WINDOW_INFO');
+    }
+
+    WINDOW_INFO.forEach(function(info, index) {
+        if (info.timings.length !== info.sequence.length) {
+            throw new Error(`Window ${index + 1} has mismatched timing data`);
+        }
+        if (info.timings.some(value => !Number.isInteger(value) || value <= 0)) {
+            throw new Error(`Window ${index + 1} has an invalid duration`);
+        }
+        if (info.sequence.some(value => !Number.isInteger(value) || value < 0 || value > 4)) {
+            throw new Error(`Window ${index + 1} has an invalid tab position`);
+        }
+    });
 }
 
-function openWindow(index) {
-    const c = browser.windows.create({
-        url: [`http://localhost/wt/w.php?n=${index + 1}`, ...Array(4).fill(`http://localhost/wt/w.php?n=${index + 1}&unselected=true`)],
+validateTimeline();
+
+function onError(error) {
+    console.error(`WT: ${error && error.message ? error.message : error}`);
+}
+
+function scheduleAt(run, dueAt, callback) {
+    if (!run.active || currentRun !== run) return;
+
+    const timer = setTimeout(function() {
+        run.timers.delete(timer);
+        if (!run.active || currentRun !== run) return;
+        Promise.resolve().then(callback).catch(onError);
+    }, Math.max(0, dueAt - performance.now()));
+
+    run.timers.add(timer);
+}
+
+async function stopRun(run) {
+    if (!run) return;
+
+    run.active = false;
+    for (const timer of run.timers) clearTimeout(timer);
+    run.timers.clear();
+
+    await Promise.allSettled(
+        [...run.windowIds].map(id => browser.windows.remove(id))
+    );
+    run.windowIds.clear();
+}
+
+function createRunState(info) {
+    return {
+        info,
+        time: 0,
+        frame: 0,
+        start: -1,
+        id: -1,
+        tid: -1,
+        lastPosition: 0,
+        skippedFrames: 0,
+        moves: 0,
+        maxMoveTime: 0,
+        finished: false
+    };
+}
+
+async function init() {
+    const requestedRunId = ++nextRunId;
+    const previousRun = currentRun;
+    await stopRun(previousRun);
+
+    // A newer click superseded this one while window cleanup was in progress.
+    if (requestedRunId !== nextRunId) return;
+
+    const run = {
+        id: requestedRunId,
+        active: true,
+        startedAt: performance.now(),
+        timers: new Set(),
+        windowIds: new Set(),
+        states: WINDOW_INFO.map(createRunState)
+    };
+    currentRun = run;
+    openWindow(0, run, 0);
+}
+
+function openWindow(index, run, startOffset) {
+    if (!run.active || currentRun !== run || index >= run.states.length) return;
+
+    if (index + 1 < run.states.length) {
+        const nextOffset = startOffset + windowDelays[index];
+        scheduleAt(run, run.startedAt + nextOffset, function() {
+            openWindow(index + 1, run, nextOffset);
+        });
+    }
+
+    const n = index + 1;
+    const baseUrl = `http://localhost/wt/w.php?n=${n}&run=${run.id}`;
+    const urls = [
+        `${baseUrl}&slot=0`,
+        ...Array.from({length: 4}, (_, slot) =>
+            `${baseUrl}&slot=${slot + 1}&unselected=true`
+        )
+    ];
+
+    browser.windows.create({
+        url: urls,
         width: 900,
         height: 300,
         top: 200 + (index * offsY),
-        left: 1920 + 200 + (index * offsX)
-    });
-    c.then(function(w) {
-        WINDOW_INFO[index].start = new Date().getTime();
-        WINDOW_INFO[index].id = w.id;
-        WINDOW_INFO[index].tid = w.tabs[0].id;
-        tickSequence(index);
-    }, onError);
+        left: 200 + (index * offsX)
+    }).then(async function(w) {
+        if (!run.active || currentRun !== run) {
+            await browser.windows.remove(w.id).catch(onError);
+            return;
+        }
 
-    const mdelay = windowDelays[index];
-    const mdiff = (new Date().getTime() - mainStart) - mainTime;
-    mainTime += mdelay;
-    if (index < windowDelays.length) setTimeout(function() {
-        openWindow(index + 1);
-    }, mdelay - mdiff);
+        if (!w.tabs || !w.tabs[0]) {
+            throw new Error(`Window ${index + 1} was created without tabs`);
+        }
+
+        const state = run.states[index];
+        run.windowIds.add(w.id);
+        state.start = run.startedAt + startOffset;
+        state.id = w.id;
+        state.tid = w.tabs[0].id;
+        state.lastPosition = 0;
+        await tickSequence(index, run);
+    }).catch(onError);
 }
 
-function onError(error) {
-    console.log(`Error: ${error}`);
+async function moveTab(state, position, run) {
+    if (state.lastPosition === position) return true;
+
+    const startedAt = performance.now();
+    try {
+        await browser.tabs.move(state.tid, {index: position});
+        if (!run.active || currentRun !== run) return false;
+
+        state.lastPosition = position;
+        state.moves++;
+        state.maxMoveTime = Math.max(
+            state.maxMoveTime,
+            performance.now() - startedAt
+        );
+        return true;
+    } catch (error) {
+        if (run.active && currentRun === run) onError(error);
+        state.finished = true;
+        return false;
+    }
 }
 
-function tickSequence(index) {
-    const win = WINDOW_INFO[index];
-    const whichTabToFocus = win.sequence[win.frame];
-    const delay = win.timings[win.frame];
-
-    browser.tabs.move(win.tid, {
-        index: whichTabToFocus
-    });
-
-    const diff = (new Date().getTime() - win.start) - WINDOW_INFO[index].time;
-    WINDOW_INFO[index].frame++;
-    WINDOW_INFO[index].time += delay;
-
-    if (WINDOW_INFO[index].frame < win.sequence.length - 1) setTimeout(function() {
-        tickSequence(index);
-    }, delay - diff);
+function reportState(index, state) {
+    if (state.finished) return;
+    state.finished = true;
+    console.info(
+        `WT window ${index + 1}: ${state.moves} moves, ` +
+        `${state.skippedFrames} skipped, ` +
+        `max API ${state.maxMoveTime.toFixed(1)}ms`
+    );
 }
 
-browser.browserAction.onClicked.addListener(init);
+async function tickSequence(index, run) {
+    if (!run.active || currentRun !== run) return;
+
+    const state = run.states[index];
+    if (state.finished) return;
+
+    const {sequence, timings} = state.info;
+    const frameCount = sequence.length;
+    const elapsed = performance.now() - state.start;
+
+    // Keep only the state that should be visible now. Expired moves are never
+    // queued, so Firefox cannot accumulate an ever-growing UI backlog.
+    while (
+        state.frame < frameCount &&
+        state.time + timings[state.frame] <= elapsed
+    ) {
+        state.time += timings[state.frame];
+        state.frame++;
+        state.skippedFrames++;
+    }
+
+    // Always leave the tab at the authored final position, even when the last
+    // very short frame expired before Firefox finished the previous move.
+    if (state.frame >= frameCount) {
+        await moveTab(state, sequence[frameCount - 1], run);
+        reportState(index, state);
+        return;
+    }
+
+    const frame = state.frame;
+    const moved = await moveTab(state, sequence[frame], run);
+    if (!moved || !run.active || currentRun !== run) return;
+
+    state.time += timings[frame];
+    state.frame = frame + 1;
+
+    if (state.frame < frameCount) {
+        scheduleAt(run, state.start + state.time, function() {
+            return tickSequence(index, run);
+        });
+    } else {
+        reportState(index, state);
+    }
+}
+
+browser.browserAction.onClicked.addListener(function() {
+    init().catch(onError);
+});
