@@ -1,15 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="<?php
-    
-$i = $_GET['n'];
-$unselected = isset($_GET['unselected']) ? 'true' : 'false';
+<?php
+declare(strict_types=1);
 
-$c = [
+header('Content-Type: text/html; charset=UTF-8');
+header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+header('Pragma: no-cache');
+header('Expires: 0');
+header('X-Content-Type-Options: nosniff');
+
+$colors = [
     'FF5040',
     'FF8F38',
     'FFD32F',
@@ -20,31 +18,82 @@ $c = [
     '2AE5C8',
     '23CFFF',
     '3987FE',
-    '3F39F7', 
+    '3F39F7',
     '8A3DFF',
     'E356FE',
-    'FC54DC', 
-    'DD4D74'
+    'FC54DC',
+    'DD4D74',
 ];
 
-$path = 'c.php?n=' . $c[$i - 1] . '&unselected=' . $unselected;
-echo $path;
-    
-    ?>" >
-    <title>﻿</title>
+$rawN = $_GET['n'] ?? null;
+if (!is_string($rawN) || !ctype_digit($rawN)) {
+    http_response_code(400);
+    exit('Invalid color index');
+}
+
+$index = (int) $rawN;
+if ($index < 1 || $index > count($colors)) {
+    http_response_code(400);
+    exit('Color index out of range');
+}
+
+$unselectedInput = $_GET['unselected'] ?? 'false';
+if (!is_string($unselectedInput)) {
+    http_response_code(400);
+    exit('Invalid tab state');
+}
+$rawUnselected = strtolower($unselectedInput);
+if (!in_array($rawUnselected, ['false', 'true', '0', '1'], true)) {
+    http_response_code(400);
+    exit('Invalid tab state');
+}
+
+$unselected = in_array($rawUnselected, ['true', '1'], true);
+$color = $colors[$index - 1];
+
+function darkenHex(string $hex, float $factor): string
+{
+    $r = (int) round(hexdec(substr($hex, 0, 2)) * $factor);
+    $g = (int) round(hexdec(substr($hex, 2, 2)) * $factor);
+    $b = (int) round(hexdec(substr($hex, 4, 2)) * $factor);
+    return sprintf('%02X%02X%02X', $r, $g, $b);
+}
+
+if ($unselected) {
+    $iconColor = darkenHex($color, 0.75);
+    $svg = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">'
+        . '<rect width="32" height="32" fill="#' . $iconColor . '"/></svg>';
+} else {
+    $svg = '<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" shape-rendering="crispEdges">'
+        . '<rect width="32" height="32" fill="#FFF"/>'
+        . '<rect x="4" y="4" width="24" height="24" fill="#' . $color . '"/></svg>';
+}
+
+$favicon = 'data:image/svg+xml;base64,' . base64_encode($svg);
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="<?= htmlspecialchars($favicon, ENT_QUOTES, 'UTF-8') ?>">
+    <title>&#12644;</title>
     <style>
+        html,
         body {
-            background-color: #<?php echo $c[$i - 1] ?>;
-            overflow: none;
+            width: 100%;
+            height: 100%;
+            margin: 0;
         }
+
+        body {
+            background-color: #<?= htmlspecialchars($color, ENT_QUOTES, 'UTF-8') ?>;
+            overflow: hidden;
+        }
+
         div {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-            padding: 0;
+            inset: 0;
             background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(255, 255, 255, 0));
         }
     </style>
