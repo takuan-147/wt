@@ -1,5 +1,7 @@
 # wt
 
+Fixed some non-functioning features by Takuan_147. Tested and confirmed working on the latest version of Floorp browser.
+
 these are the files i used to animate my ["fan music video" of wavetapper by frums](https://youtu.be/kq_nzrr_ZdE)
 
 automation was mainly by abusing `browser.windows.create()` and `browser.tabs.move()` from the [firefox webextensions api](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API)
